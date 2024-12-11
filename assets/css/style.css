@@ -1,0 +1,351 @@
+/* Overlay  */
+.sam-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    border-radius: 4px;
+}
+
+/* Loading */
+.sam-loading,
+.sam-loading::before,
+.sam-loading::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-left-color: rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 999px;
+    -moz-border-radius: 999px;
+    border-radius: 999px;
+}
+
+.sam-loading {
+    margin: -25px 0 0 -25px;
+    height: 50px;
+    width: 50px;
+    -webkit-animation: animation-rotate 1000ms linear infinite;
+    -moz-animation: animation-rotate 1000ms linear infinite;
+    -o-animation: animation-rotate 1000ms linear infinite;
+    animation: animation-rotate 1000ms linear infinite;
+}
+
+.sam-loading::before {
+    content: "";
+    margin: -23px 0 0 -23px;
+    height: 44px;
+    width: 44px;
+    -webkit-animation: animation-rotate 1000ms linear infinite;
+    -moz-animation: animation-rotate 1000ms linear infinite;
+    -o-animation: animation-rotate 1000ms linear infinite;
+    animation: animation-rotate 1000ms linear infinite;
+}
+
+.sam-loading::after {
+    content: "";
+    margin: -29px 0 0 -29px;
+    height: 56px;
+    width: 56px;
+    -webkit-animation: animation-rotate 2000ms linear infinite;
+    -moz-animation: animation-rotate 2000ms linear infinite;
+    -o-animation: animation-rotate 2000ms linear infinite;
+    animation: animation-rotate 2000ms linear infinite;
+}
+
+@-webkit-keyframes animation-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes animation-rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes animation-rotate {
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes animation-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
+
+p {
+    color: grey
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+#samform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#samform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#samform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#samform input,
+#samform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#samform input:focus,
+#samform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #673AB7;
+    outline-width: 0
+}
+
+#samform .action-button {
+    width: 140px;
+    background: #673AB7;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#samform .action-button:hover,
+#samform .action-button:focus {
+    background-color: #311B92
+}
+
+#samform .action-button-previous {
+    width: 100px;
+    background: #616161;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#samform .action-button-previous:hover,
+#samform .action-button-previous:focus {
+    background-color: #000000
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #673AB7;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.sam-label {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 8px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #673AB7
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 33%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #send:before {
+    content: '';
+    background-image: url('/wp-content/plugins/sam-forms/assets/imgs/send.webp');
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#progressbar #verify:before {
+    content: '';
+    background-image: url('/wp-content/plugins/sam-forms/assets/imgs/confirmation.webp');
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#progressbar #finish:before {
+    content: '';
+    background-image: url('/wp-content/plugins/sam-forms/assets/imgs/check-mark.webp');
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #673AB7
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    background-color: #673ab7
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+
+/* From */
+.sam-input-error {
+    border-color: #f05025 !important;
+}
+
+.sam-form-group .sam-is-required {
+    color: red;
+}
+
+.sam-alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 16px;
+    margin-top: 4px;
+}
+
+.sam-alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    padding: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.sam-alert-info {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    padding: 16px;
+    margin: 4px auto 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.sam-alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    padding: 16px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
